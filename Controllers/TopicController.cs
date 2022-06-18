@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using VGC;
 using VGC.Models;
@@ -17,6 +18,7 @@ namespace VGC.Controllers
             this.db = db;
         }
 
+        [Authorize]
         public IActionResult Index()
         {
             return View();
