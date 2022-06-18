@@ -1,4 +1,6 @@
-﻿namespace VGC.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace VGC.Models
 {
     public class StudentCourses
     {
