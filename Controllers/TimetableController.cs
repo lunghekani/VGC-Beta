@@ -4,7 +4,7 @@ namespace VGC.Controllers
 {
     public class TimetableController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Timetable()
         {
             return View();
         }

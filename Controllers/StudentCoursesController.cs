@@ -4,7 +4,7 @@ namespace VGC.Controllers
 {
     public class StudentCoursesController : Controller
     {
-        public IActionResult Index()
+        public IActionResult StudentCourses()
         {
             return View();
         }
