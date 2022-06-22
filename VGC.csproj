@@ -23,9 +23,11 @@
     <None Remove="Swashbuckle.AspNetCore" />
     <None Remove="Views\lectHomePage\" />
     <None Remove="Views\AddCourseContent\" />
+    <None Remove="Views\ViewProjects\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\lectHomePage\" />
     <Folder Include="Views\AddCourseContent\" />
+    <Folder Include="Views\ViewProjects\" />
   </ItemGroup>
 </Project>
