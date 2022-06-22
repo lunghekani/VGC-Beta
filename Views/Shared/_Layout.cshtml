@@ -38,37 +38,31 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="lectHomePage" asp-action="Index">Lecturer</a>
                         </li>
-                      
-                        @*If the user is signed-in display Logout link*@
-                       
-
-
                          <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Timetable" asp-action="Timetable">Timetable</a>
-                        </li> <li class="nav-item">
+                        </li> 
+                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="StudentCourses" asp-action="StudentCourses">Student courses</a>
-                        </li> <li class="nav-item">
+                        </li> 
+                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Topics" asp-action="Topics">Topics</a>
-                     </li>
+                        </li>
                    @if (_signInManager.IsSignedIn(User))
-{
-     
+                        {
                             var user = _userManager.FindByEmailAsync(User.Identity.Name);
                             string firstName = user.Result.FirstName;
-
-                        
-  <form asp-area="" asp-controller="Account" asp-action="logout" method="post" id="logoutForm" class="navbar-right">
-   <ul class="nav navbar-nav navbar-right">
-    <li>
-     <a asp-area="" asp-controller="Manage" asp-action="Index" title="Manage">Hello @firstName </a>
-    </li>
-    <li>
-      <button type="submit" class="btn btn-link navbar-btn navbar-link">Log off</button>
-    </li>
-   </ul>
- </form>
+                          <form asp-area="" asp-controller="Account" asp-action="logout" method="post" id="logoutForm" class="navbar-right">
+                           <ul class="nav navbar-nav navbar-right">
+                            <li>
+                             <a asp-area="" asp-controller="Manage" asp-action="Index" title="Manage">Hello @firstName </a>
+                            </li>
+                            <li>
+                              <button type="submit" class="btn btn-link navbar-btn navbar-link">Log off</button>
+                            </li>
+                           </ul>
+                         </form>
 }else{
-      <li class="nav-item">
+                        <li class="nav-item">
                             <a class="nav-link" asp-controller="account" asp-action="register">
                                 Register
                             </a>
@@ -78,9 +72,9 @@
                                 Login
                             </a>
                         </li>
-}
 
-                    </ul>
+  </ul>
+  
                                  
                 </div>
             </div>
