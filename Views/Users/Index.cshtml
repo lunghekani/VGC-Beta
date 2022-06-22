@@ -1,5 +1,5 @@
 ﻿@using System.Collections
-@model IEnumerable<VGC.Models.Users>
+@model IEnumerable<VGC.Models.ApplicationUser>
 
 @{
     ViewData["Title"] = "Users";
@@ -23,7 +23,7 @@
     {
         <table class = "table table-bordered table-striped" style = "width: 100%">
             <thead>
-                    <tr>
+                <tr>
                     <th>
                         Name
                     </th>
@@ -39,31 +39,24 @@
                     <th>
                         Address
                     </th>
-                    <th>
-                        Password
-                    </th>
-                    <th>
-                        Confirm Password
-                    </th>
+                 
                 </tr>
             </thead>
             <tbody>
                 @foreach (var obj in Model)
                 {
                 <tr>
-                    <td width = "30%">@obj.Name</td>
+                    <td width = "30%">@obj.FirstName</td>
                     <td width = "30%">@obj.Surname</td>
                     <td width = "30%">@obj.PhoneNumber</td>
-                    <td width = "30%">@obj.Email</td>
                     <td width = "30%">@obj.Address</td>
-                    <td width = "30%">@obj.Password</td>
-                    <td width = "30%">@obj.ConfirmPassword</td>
+                   
                     <td class="text-center">
                         <div class="w-75 btn-group" role="group">
-                            <a asp-controller= "Users" asp-route-UserId="@obj.UserId" asp-action="Edit" class="btn btn-primary mx-2">
+                            <a asp-controller= "Users" asp-route-UserId="@obj.Id" asp-action="Edit" class="btn btn-primary mx-2">
                                 Edit
                             </a>
-                            <a asp-controller= "Users" asp-route-UserId="@obj.UserId" asp-action="Delete" class="btn btn-danger mx-2">
+                            <a asp-controller= "Users" asp-route-UserId="@obj.Id" asp-action="Delete" class="btn btn-danger mx-2">
                                 Delete
                             </a>
                         </div>
@@ -75,7 +68,7 @@
      }
          else
          {
-           <p>No User Exists</p>
+           <p>No Users Exist</p>
          }
 </div>
 

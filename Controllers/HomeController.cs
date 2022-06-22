@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using VGC.Models;
-
 namespace VGC.Controllers
 {
     public class HomeController : Controller
