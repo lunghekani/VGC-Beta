@@ -25,7 +25,7 @@ namespace VGC.Models
         public string Address { get; set; }
         [Required]
         public string Password { get; set; }
-        [Required]
-        public string ConfirmPassword { get; set; }
+
+        public string? ConfirmPassword { get; set; }
     }
 }

@@ -62,21 +62,17 @@ namespace VGC.Controllers
         //POST - EDIT
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult EditPost(Users obj)
-        
+        public IActionResult Edit(Users obj)
         {
-            var Users = _db.User.Find(obj);
-            if (obj == null)
-            {
-                return NotFound();
-            }
+            if (ModelState.IsValid)
             {
                 _db.User.Update(obj);
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            return View(obj);
         }
-        
+
 
         //GET - DELETE
         public IActionResult Delete(int? UserId)

@@ -309,7 +309,6 @@ namespace VGC.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ConfirmPassword")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")

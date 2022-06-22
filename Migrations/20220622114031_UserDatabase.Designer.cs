@@ -12,8 +12,8 @@ using VGC;
 namespace VGC.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220618094231_addUserstoDatabase")]
-    partial class addUserstoDatabase
+    [Migration("20220622114031_UserDatabase")]
+    partial class UserDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -239,7 +239,7 @@ namespace VGC.Migrations
                     b.ToTable("Projects");
                 });
 
-            modelBuilder.Entity("VGC.Models.Users", b =>
+            modelBuilder.Entity("VGC.Models.Signup", b =>
                 {
                     b.Property<int>("UserId")
                         .ValueGeneratedOnAdd()
@@ -253,6 +253,64 @@ namespace VGC.Migrations
 
                     b.Property<string>("ConfirmPassword")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Surname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserId");
+
+                    b.ToTable("Signup");
+                });
+
+            modelBuilder.Entity("VGC.Models.Topics", b =>
+                {
+                    b.Property<string>("TopicId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("TopicDescription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TopicName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("TopicId");
+
+                    b.ToTable("Topics");
+                });
+
+            modelBuilder.Entity("VGC.Models.Users", b =>
+                {
+                    b.Property<int>("UserId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"), 1L, 1);
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ConfirmPassword")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
