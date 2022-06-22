@@ -32,6 +32,7 @@
                       <a class="nav-link text-dark" asp-area="" asp-controller="StudentCourses" asp-action="StudentCourses">Student Courses</a>
                       <a class="nav-link text-dark" asp-area="" asp-controller="Timetable" asp-action="Timetable">Timetable</a>
                       <a class="nav-link text-dark" asp-area="" asp-controller="Topics" asp-action="Topics">Topics</a>
+
                       <a href="#">Link 3</a>
                     </div>
                   </div> 
@@ -44,6 +45,7 @@
                       <a class="nav-link text-dark" asp-area="" asp-controller="AddCourseContent" asp-action="AddCourseContent">Add Course Content</a>
                     </div>
                   </div> 
+
                   <div class="new_dropdown">
                     <button class="new_dropbtn text-dark">Admin 
                       <i class="fa fa-caret-down"></i>
@@ -54,6 +56,8 @@
                       <a href="#">Link 3</a>
                     </div>
                   </div> 
+
+
                   <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                   <a class="nav-link text-dark" asp-controller="account" asp-action="register">Register</a>
                   <a class="nav-link text-dark"  asp-controller="account" asp-action="login">Login</a>
@@ -66,6 +70,16 @@
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
+    </div>
+
+
+
+
+    <div class="menu-btn">
+        <div class="menu-btn_burger">
+
+        </div>
+
     </div>
 
     <footer class="border-top footer text-muted">
