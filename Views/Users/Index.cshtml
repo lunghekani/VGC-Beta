@@ -23,7 +23,7 @@
     {
         <table class = "table table-bordered table-striped" style = "width: 100%">
             <thead>
-                    <tr>
+                <tr>
                     <th>
                         Name
                     </th>
@@ -39,9 +39,6 @@
                     <th>
                         Address
                     </th>
-                    <th>
-                        Password
-                    </th>
                  
                 </tr>
             </thead>
@@ -52,9 +49,8 @@
                     <td width = "30%">@obj.FirstName</td>
                     <td width = "30%">@obj.Surname</td>
                     <td width = "30%">@obj.PhoneNumber</td>
-                    <td width = "30%">@obj.Email</td>
                     <td width = "30%">@obj.Address</td>
-                 
+                   
                     <td class="text-center">
                         <div class="w-75 btn-group" role="group">
                             <a asp-controller= "Users" asp-route-UserId="@obj.Id" asp-action="Edit" class="btn btn-primary mx-2">
@@ -72,7 +68,7 @@
      }
          else
          {
-           <p>No User Exists</p>
+           <p>No Users Exist</p>
          }
 </div>
 
