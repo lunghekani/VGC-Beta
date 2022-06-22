@@ -72,8 +72,6 @@ namespace VGC.Controllers
             return View(model);
 
         }
-
-
     }
 }
 
