@@ -8,5 +8,10 @@ namespace VGC.Controllers
         {
             return View();
         }
+        public IActionResult CoursesAvailable()
+        {
+            return View();
+        }
     }
 }
+
