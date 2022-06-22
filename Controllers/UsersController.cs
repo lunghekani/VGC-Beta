@@ -19,7 +19,7 @@ namespace VGC.Controllers
 
         public IActionResult Index()
         {
-            IEnumerable<Users> objList = _db.User;
+            IEnumerable<ApplicationUser> objList = _db.Users.ToList();
             return View(objList);
         }
 
