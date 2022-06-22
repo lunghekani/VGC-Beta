@@ -1,0 +1,87 @@
+
+@model VGC.Views.CreateAssessment.CreateAssessmentModel
+@{
+    ViewData["Title"] = "CreateAssessment";
+}
+
+<div class="container">
+    <div>
+
+
+        <div class="card">
+            <div class="card-body">
+                <h3 class="font-size-lg text-dark font-weight-bold mb-6">Add Assessment</h3>
+                <div class="mb-15">
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-form-label">Assessment Name:</label>
+                        <div class="col-lg-6">
+                            <input name="ctl00$ContentPlaceHolder1$txtCourseName" type="text" id="ContentPlaceHolder1_txtCourseName" class="form-control" placeholder="Enter course name">
+
+
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-form-label">Assessment Description:</label>
+                        <div class="col-lg-6">
+                            <textarea name="ctl00$ContentPlaceHolder1$txtDescription" rows="3" cols="75" id="ContentPlaceHolder1_txtDescription" class="form-control" placeholder="Enter a description"></textarea>
+
+
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-form-label">Assessment Code:</label>
+                        <div class="col-lg-6">
+                            <input name="ctl00$ContentPlaceHolder1$txtCode" type="text" id="ContentPlaceHolder1_txtCode" class="form-control" placeholder="#A0A0A0">
+
+
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-form-label">Start Time:</label>
+                        <div class="col-lg-6">
+                            <input name="ctl00$ContentPlaceHolder1$txtStartTime" id="ContentPlaceHolder1_txtStartTime" class="form-control" type="datetime-local" value="2021-09-06T13:45:00">
+
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-form-label">End Time:</label>
+                        <div class="col-lg-6">
+                            <input name="ctl00$ContentPlaceHolder1$txtEndTime" id="ContentPlaceHolder1_txtEndTime" class="form-control" type="datetime-local" value="2022-01-19T13:45:00">
+
+
+                            <span class="form-text text-muted">Leave blank if there is no specific end time</span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-3 col-form-label">Visible</label>
+                        <div class="col-3">
+                            <span class="switch switch-success witch-outline switch-icon ">
+                                <label>
+                                    <span class="form-control"><input id="ContentPlaceHolder1_checkVisible" type="checkbox" name="ctl00$ContentPlaceHolder1$checkVisible"></span>
+
+                                    <span></span>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="card-footer">
+            <div class="row">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6">
+                    <button type="reset" class="btn btn-success mr-2">Submit</button>
+                    <button type="reset" class="btn btn-secondary">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

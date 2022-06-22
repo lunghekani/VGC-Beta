@@ -25,11 +25,13 @@
     <None Remove="Views\AddCourseContent\" />
     <None Remove="Views\ViewProjects\" />
     <None Remove="Views\ViewStudents\" />
+    <None Remove="Views\CreateAssessment\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\lectHomePage\" />
     <Folder Include="Views\AddCourseContent\" />
     <Folder Include="Views\ViewProjects\" />
     <Folder Include="Views\ViewStudents\" />
+    <Folder Include="Views\CreateAssessment\" />
   </ItemGroup>
 </Project>
