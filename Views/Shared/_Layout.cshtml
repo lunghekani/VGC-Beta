@@ -33,6 +33,7 @@
                       <a class="nav-link text-dark" asp-area="" asp-controller="StudentCourses" asp-action="StudentCourses">Student Courses</a>
                       <a class="nav-link text-dark" asp-area="" asp-controller="Timetable" asp-action="Timetable">Timetable</a>
                       <a class="nav-link text-dark" asp-area="" asp-controller="Topics" asp-action="Topics">Topics</a>
+
                       <a href="#">Link 3</a>
                     </div>
                   </div> 
@@ -48,6 +49,7 @@
 
                     </div>
                   </div> 
+
                   <div class="new_dropdown">
                     <button class="new_dropbtn text-dark">Admin 
                       <i class="fa fa-caret-down"></i>
@@ -58,6 +60,8 @@
                       <a href="#">Link 3</a>
                     </div>
                   </div> 
+
+
                   <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
               @if (_signInManager.IsSignedIn(User))
                         {
@@ -89,6 +93,11 @@
             @RenderBody()
         </main>
     </div>
+
+
+
+
+   
 
     <footer class="border-top footer text-muted">
         <div class="container">
