@@ -22,8 +22,8 @@
 
                 <div class="new_topnav" id="myTopnav">
                 <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Index">Users</a>
-                <a class="nav-link text-dark" asp-area="" asp-controller="Signup" asp-action="Index">Signup</a>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="ListUsers">Users</a>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Projects" asp-action="Index">Projects</a>
                   <div class="new_dropdown">
                     <button class="new_dropbtn text-dark">Students
                       <i class="fa fa-caret-down"></i>
@@ -33,6 +33,7 @@
                       <a class="nav-link text-dark" asp-area="" asp-controller="StudentCourses" asp-action="StudentCourses">Student Courses</a>
                       <a class="nav-link text-dark" asp-area="" asp-controller="Timetable" asp-action="Timetable">Timetable</a>
                       <a class="nav-link text-dark" asp-area="" asp-controller="Topics" asp-action="Topics">Topics</a>
+
                       <a href="#">Link 3</a>
                     </div>
                   </div> 
@@ -44,8 +45,11 @@
                         <a class="nav-link text-dark" asp-area="" asp-controller="lectHomePage" asp-action="Index">Dashboard</a>
                         <a class="nav-link text-dark" asp-area="" asp-controller="AddCourseContent" asp-action="AddCourseContent">Add Course Content</a>
                         <a class="nav-link text-dark" asp-area="" asp-controller="ViewProjects" asp-action="ViewProjects">View Projects</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="ViewStudents" asp-action="ViewStudents">View Students</a>
+
                     </div>
                   </div> 
+
                   <div class="new_dropdown">
                     <button class="new_dropbtn text-dark">Admin 
                       <i class="fa fa-caret-down"></i>
@@ -56,6 +60,8 @@
                       <a href="#">Link 3</a>
                     </div>
                   </div> 
+
+
                   <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                   <div class="new_dropdown" style="position: relative; left: 5px">
                       @if (_signInManager.IsSignedIn(User))
@@ -89,6 +95,11 @@
             @RenderBody()
         </main>
     </div>
+
+
+
+
+   
 
     <footer class="border-top footer text-muted">
         <div class="container">
