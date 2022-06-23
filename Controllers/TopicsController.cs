@@ -22,10 +22,19 @@ namespace VGC.Controllers
         {
             return View();
         }
-        public IActionResult List()
+        public IActionResult List() //listing topics
         {
-            return View();
+            var topics = db.Topics.ToList();
+            return View(topics);
         }
+
+        public IActionResult TopicContent(int? TopicId)
+        {
+            var topic = db.Topics.Find(TopicId);
+            
+            return View(topic.TopicInfo);
+        }
+
 
         //GET - CREATE
         public IActionResult Create()

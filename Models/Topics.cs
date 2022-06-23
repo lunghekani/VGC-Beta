@@ -8,7 +8,7 @@ namespace VGC.Models
         public string TopicId { get; set; }
         public string TopicName  { get; set; }
         public string TopicDescription { get; set; }
+        public string TopicInfo { get; set; }
 
-        
     }
 }

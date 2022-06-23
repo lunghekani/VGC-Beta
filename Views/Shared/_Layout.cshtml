@@ -31,7 +31,10 @@
                       <a class="nav-link text-dark" asp-area="" asp-controller="" asp-action="Index">Dashboard</a>
                       <a class="nav-link text-dark" asp-area="" asp-controller="StudentCourses" asp-action="StudentCourses">Student Courses</a>
                       <a class="nav-link text-dark" asp-area="" asp-controller="Timetable" asp-action="Timetable">Timetable</a>
-                      <a class="nav-link text-dark" asp-area="" asp-controller="Topics" asp-action="Topics">Topics</a>
+                      <a class="nav-link text-dark" asp-area="" asp-controller="Topics" asp-action="TopicContent">TopicContent</a>
+                      <a class="nav-link text-dark" asp-area="" asp-controller="Marks" asp-action="Marks">Marks</a>
+
+                     @* <a class="nav-link text-dark" asp-area="" asp-controller="Topics" asp-action="Topics">Topics</a>*@
                       <a href="#">Link 3</a>
                     </div>
                   </div> 
@@ -68,14 +71,20 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+<footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2022 - VGC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
+
+
+ </body>
+</html>
+
+
+
+   
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
-</body>
-</html>

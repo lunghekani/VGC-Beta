@@ -14,6 +14,8 @@ namespace VGC
         public DbSet<Users> User { get; set; }
         public DbSet<Signup> Signup { get; set; }
         public DbSet<Topics> Topics { get; set; }
+        public DbSet<StudentCourses> StudentCourses { get; set; }
+        public DbSet<TimeTable> Timetable { get; set; }
 
 
     }

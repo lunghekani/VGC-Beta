@@ -1,5 +1,7 @@
-﻿ <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/VGC.styles.css" asp-append-version="true" />
+﻿
+
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/VGC.styles.css" asp-append-version="true" />
 
 <div class="card-body">
            
@@ -7,7 +9,7 @@
             <div>
 	
                 
-                <table cellspacing="0" rules="all" css="datatable datatable-bordered datatable-head-custom datatable-default datatable-primary datatable-loaded" align-content="center" border="1" id="ContentPlaceHolder1_gvTopics" style="border-collapse:collapse;text-align: center; word-wrap: break-word; ">
+        <table cellspacing="0" rules="all" css="datatable datatable-bordered datatable-head-custom datatable-default datatable-primary datatable-loaded" align-content="center" border="1" id="ContentPlaceHolder1_gvTopics" style="border-collapse:collapse;text-align: center; word-wrap: break-word; ">
 		<tbody>
             <tr id="header">
 			<th scope="col">Action</th>
@@ -18,22 +20,23 @@
 
 
         <tr>
-			<td> <input type="button" name="ctl00$ContentPlaceHolder1$gvTopics$ctl02$ctl00" value="" onclick="javascript:__doPostBack('ctl00$ContentPlaceHolder1$gvTopics$ctl02$ctl00','')" class="btn btn-primary  fa" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"></td>
+			<td> <a asp-controller="Topics" asp-action="TopicContent" > view</a></td>
             <td>HTML Intro</td>
             <td>Basic HTML intro</td>
             <td>20</td>
 		</tr>
 
         <tr class="bottomBorder" style="border-width:0px;">
-			<td>
-                <input type="button" name="ctl00$ContentPlaceHolder1$gvTopics$ctl03$ctl00" value="" onclick="javascript:__doPostBack('ctl00$ContentPlaceHolder1$gvTopics$ctl03$ctl00','')" class="btn btn-primary  fa" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"></td>
+            
+			<td> <a asp-controller="Topics" asp-action="TopicContent"  > view</a></td>
+                
                 <td>HTML Basic Examples</td>
                 <td>Basic examples</td>
                 <td>0</td>
 		</tr>
         
         <tr>
-			<td><input type="button" name="ctl00$ContentPlaceHolder1$gvTopics$ctl04$ctl00" value="" onclick="javascript:__doPostBack('ctl00$ContentPlaceHolder1$gvTopics$ctl04$ctl00','')" class="btn btn-primary  fa" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"></td>
+			<td> <a asp-controller="Topics" asp-action="TopicContent"   > view</a></td>
             <td>Game Canvas</td>
             <td>Using the canvas</td>
             <td>0</td>
@@ -41,8 +44,7 @@
         </tr>
         
         <tr class="bottomBorder" style="border-width:0px;">
-			<td>
-                <input type="button" name="ctl00$ContentPlaceHolder1$gvTopics$ctl05$ctl00" value="" onclick="javascript:__doPostBack('ctl00$ContentPlaceHolder1$gvTopics$ctl05$ctl00','')" class="btn btn-primary  fa" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"></td>
+			<td> <a asp-controller="Topics" asp-action="TopicContent" > view</a></td>
                 <td>Game Components</td>
                 <td>Building the components used for a game</td>
                 <td>0</td>

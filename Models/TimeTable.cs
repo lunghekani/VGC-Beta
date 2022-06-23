@@ -6,7 +6,7 @@ namespace VGC.Models
     {
         [Key]
 
-        public int Id { get; set; }
+        public int TimeTableId { get; set; }
         public string CourseName  { get; set; }
         public string LecturerName { get; set; }
         public double Classtime { get; set; }
