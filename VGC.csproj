@@ -16,7 +16,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.6" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,6 +26,7 @@
     <None Remove="Views\ViewProjects\" />
     <None Remove="Views\ViewStudents\" />
     <None Remove="Views\CreateAssessment\" />
+    <None Remove="Views\ViewAssessment\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\lectHomePage\" />
@@ -33,5 +34,6 @@
     <Folder Include="Views\ViewProjects\" />
     <Folder Include="Views\ViewStudents\" />
     <Folder Include="Views\CreateAssessment\" />
+    <Folder Include="Views\ViewAssessment\" />
   </ItemGroup>
 </Project>
