@@ -28,6 +28,10 @@ namespace VGC.Controllers
         {
             return View();
         }
+        public IActionResult adminCalender()
+        {
+            return View();
+        }
     }
 }
 
