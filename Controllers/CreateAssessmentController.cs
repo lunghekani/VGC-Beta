@@ -12,5 +12,10 @@ namespace VGC.Controllers
         {
             return View();
         }
+
+        public IActionResult StudentAssessment()
+        {
+            return View();
+        }
     }
 }
