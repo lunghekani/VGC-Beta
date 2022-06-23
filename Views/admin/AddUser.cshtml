@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewData["Title"] = "AddUser";
+}
+
+<div class="card">
+        <div class="card-body">
+            <h3 class="font-size-lg text-dark font-weight-bold mb-6">Add User:</h3>
+            <div class="mb-15">
+                <div class="form-group row">
+                    <label class="col-lg-3 col-form-label">First Name:</label>
+                    <div class="col-lg-6">
+                        <input type="text" placeholder="First name" class="form-control" ID="txtFirstName" runat="server" >
+
+
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-lg-3 col-form-label">Last Name:</label>
+                    <div class="col-lg-6">
+                        <input type="text" runat="server"  Rows="3" Columns="75" class="form-control" ID="txtLstName" placeholder="Last Name">
+
+
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-lg-3 col-form-label">Email</label>
+                    <div class="col-lg-6">
+                        <input type="text" runat="server" Textmode="Email" class="form-control" ID="txtEmail" placeholder="name@email.com">
+
+
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <label class="col-3 col-form-label">Role</label>
+                    <div class="col-3">
+                        <span class="switch switch-success witch-outline switch-icon ">
+                            <label>
+                                <div class="col-md-4 my-2 my-md-0"></div>
+                                <div class="d-flex align-items-center"></div>
+                                    
+
+                                    <select ID="DropDownList1" runat="server" class="form-control">
+                                    <option value="-1">Select Role</option>
+                                    <option value="1">Lecturer</option>
+                                    <option value="2">Student</option>
+                                    <option value="3">Admin</option>
+
+                                    </select>
+
+                                <span></span>
+                            </label>
+                        </span>
+                    </div>
+                </div>
+
+
+            </div>
+            
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-lg-3"></div>
+                    <div class="col-lg-6">
+                        <input type="submit" runat="server" value="Add User" ID="btnAddUser" class="btn btn-success mr-2" OnClick="btnAddUser_Click"/>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function myFunction() 
+        {
+          var x = document.getElementById("txtPassword");
+          if (x.type === "password") {
+            x.type = "text";
+          } else {
+            x.type = "password";
+          }
+        }
+        function rmyFunction() 
+        {
+          var x = document.getElementById("rtxtPassword");
+          if (x.type === "password") {
+            x.type = "text";
+          } else {
+            x.type = "password";
+          }
+        }
+    </script>
+

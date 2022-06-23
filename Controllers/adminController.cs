@@ -16,6 +16,18 @@ namespace VGC.Controllers
         {
             return View();
         }
+        public IActionResult AddUser()
+        {
+            return View();
+        }
+        public IActionResult ViewUser()
+        {
+            return View();
+        }
+        public IActionResult ViewLecturers()
+        {
+            return View();
+        }
     }
 }
 
