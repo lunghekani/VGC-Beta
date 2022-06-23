@@ -8,5 +8,30 @@ namespace VGC.Controllers
         {
             return View();
         }
+        public IActionResult CoursesAvailable()
+        {
+            return View();
+        }
+        public IActionResult AddCourse()
+        {
+            return View();
+        }
+        public IActionResult AddUser()
+        {
+            return View();
+        }
+        public IActionResult ViewUser()
+        {
+            return View();
+        }
+        public IActionResult ViewLecturers()
+        {
+            return View();
+        }
+        public IActionResult adminCalender()
+        {
+            return View();
+        }
     }
 }
+

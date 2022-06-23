@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 @using Microsoft.AspNetCore.Identity
-@inject SignInManager<IdentityUser> _signInManager
+@inject SignInManager<ApplicationUser> _signInManager
+@inject UserManager<ApplicationUser> _userManager
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -21,8 +22,8 @@
 
                 <div class="new_topnav" id="myTopnav">
                 <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Index">Users</a>
-                <a class="nav-link text-dark" asp-area="" asp-controller="Signup" asp-action="Index">Signup</a>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="ListUsers">Users</a>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Projects" asp-action="Index">Projects</a>
                   <div class="new_dropdown">
                     <button class="new_dropbtn text-dark">Students
                       <i class="fa fa-caret-down"></i>
@@ -31,10 +32,8 @@
                       <a class="nav-link text-dark" asp-area="" asp-controller="" asp-action="Index">Dashboard</a>
                       <a class="nav-link text-dark" asp-area="" asp-controller="StudentCourses" asp-action="StudentCourses">Student Courses</a>
                       <a class="nav-link text-dark" asp-area="" asp-controller="Timetable" asp-action="Timetable">Timetable</a>
-                      <a class="nav-link text-dark" asp-area="" asp-controller="Topics" asp-action="TopicContent">TopicContent</a>
-                      <a class="nav-link text-dark" asp-area="" asp-controller="Marks" asp-action="Marks">Marks</a>
+                      <a class="nav-link text-dark" asp-area="" asp-controller="Topics" asp-action="Topics">Topics</a>
 
-                     @* <a class="nav-link text-dark" asp-area="" asp-controller="Topics" asp-action="Topics">Topics</a>*@
                       <a href="#">Link 3</a>
                     </div>
                   </div> 
@@ -43,24 +42,56 @@
                       <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="new_dropdown-content">
-                      <a class="nav-link text-dark" asp-area="" asp-controller="lectHomePage" asp-action="Index">Dashboard</a>
-                      <a class="nav-link text-dark" asp-area="" asp-controller="AddCourseContent" asp-action="AddCourseContent">Add Course Content</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="lectHomePage" asp-action="Index">Dashboard</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="AddCourseContent" asp-action="AddCourseContent">Add Course Content</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="ViewProjects" asp-action="ViewProjects">View Projects</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="ViewStudents" asp-action="ViewStudents">View Students</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="CreateAssessment" asp-action="CreateAssessment">Create Assessment</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="ViewAssessment" asp-action="ViewAssessment">View Assessment</a>
                     </div>
                   </div> 
+
                   <div class="new_dropdown">
                     <button class="new_dropbtn text-dark">Admin 
                       <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="new_dropdown-content">
                       <a class="nav-link text-dark" asp-area="" asp-controller="admin" asp-action="Index">Dashboard</a>
-                      <a href="#">Link 2</a>
-                      <a href="#">Link 3</a>
+                      <a class="nav-link text-dark" asp-area="" asp-controller="admin" asp-action="CoursesAvailable">Courses Available</a>
+                      <a class="nav-link text-dark" asp-area="" asp-controller="admin" asp-action="AddCourse">Add Course</a>
+                      <a class="nav-link text-dark" asp-area="" asp-controller="admin" asp-action="ViewUser">View Students</a>
+                      <a class="nav-link text-dark" asp-area="" asp-controller="admin" asp-action="ViewLecturers">View Lecturers</a>
+                      <a class="nav-link text-dark" asp-area="" asp-controller="admin" asp-action="AddUser">Add User</a>
+                      <a class="nav-link text-dark" asp-area="" asp-controller="ViewProjects" asp-action="ViewProjects">View Projects</a>
+                      <a class="nav-link text-dark" asp-area="" asp-controller="admin" asp-action="adminCalender">Calender</a>
                     </div>
-                  </div> 
+                  </div>
+
+
                   <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                  <a class="nav-link text-dark" asp-controller="account" asp-action="register">Register</a>
-                  <a class="nav-link text-dark"  asp-controller="account" asp-action="login">Login</a>
-                  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+                  <div class="new_dropdown" style="position: relative; left: 5px">
+                      @if (_signInManager.IsSignedIn(User))
+                                {
+                                    var user = _userManager.FindByEmailAsync(User.Identity.Name);
+                                    string firstName = user.Result.FirstName;
+                        
+                      <form asp-area="" asp-controller="Account" asp-action="logout" method="post" id="logoutForm" class="navbar-right text-dark">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a class="nav-link text-dark"  asp-area="" asp-controller="Manage" asp-action="Index" title="Manage">Hello @firstName </a>
+                            </li>
+                            <li>
+                                <button type="submit" class="new_dropbtn text-dark">Log off</button>
+                            </li>
+                        </ul>
+                      </form>
+
+                        }else{
+                          <a class="nav-link text-dark" asp-controller="account" asp-action="register">Register</a>
+                          <a class="nav-link text-dark"  asp-controller="account" asp-action="login">Login</a>
+                          <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+                          }
+                    </div>
            </div>
            @*If user is signed out display Logout link*@
         </nav>
@@ -71,20 +102,19 @@
         </main>
     </div>
 
-<footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - VGC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-
-
- </body>
-</html>
 
 
 
    
+
+    <footer class="border-top footer text-muted" style="position: sticky; bottom:auto">
+        <div class="container">
+            &copy; 2022 - VGC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

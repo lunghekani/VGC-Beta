@@ -4,7 +4,7 @@ using VGC.Models;
 
 namespace VGC
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext(DbContextOptions options) : base(options)
         {
@@ -12,10 +12,8 @@ namespace VGC
 
         public DbSet<Project> Projects { get; set; }
         public DbSet<Users> User { get; set; }
-        public DbSet<Signup> Signup { get; set; }
         public DbSet<Topics> Topics { get; set; }
-        public DbSet<StudentCourses> StudentCourses { get; set; }
-        public DbSet<TimeTable> Timetable { get; set; }
+        public DbSet<Courses> Courses { get; set; }
 
 
     }

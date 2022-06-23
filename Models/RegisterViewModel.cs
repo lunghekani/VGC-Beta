@@ -2,7 +2,7 @@
 
 namespace VGC.Models
 {
-    public class DummyRegisterViewModel
+    public class RegisterViewModel
     {
         [Required]
         [EmailAddress]
@@ -17,5 +17,9 @@ namespace VGC.Models
         [Compare("Password",
             ErrorMessage = "Password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        public string FirstName{ get; set; }
+        public string Surname { get; set; }
+        public string Address { get; set; }
     }
 }
