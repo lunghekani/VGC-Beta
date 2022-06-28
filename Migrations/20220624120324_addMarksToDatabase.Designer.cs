@@ -12,8 +12,8 @@ using VGC;
 namespace VGC.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220622133238_addedCouresToDatabase")]
-    partial class addedCouresToDatabase
+    [Migration("20220624120324_addMarksToDatabase")]
+    partial class addMarksToDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -264,6 +264,55 @@ namespace VGC.Migrations
                     b.ToTable("Courses");
                 });
 
+            modelBuilder.Entity("VGC.Models.CreateAssessment", b =>
+                {
+                    b.Property<string>("AssessmentName")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("AssessmentCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AssessmentDesc")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DueDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("AssessmentName");
+
+                    b.ToTable("CreateAssessment");
+                });
+
+            modelBuilder.Entity("VGC.Models.Marks", b =>
+                {
+                    b.Property<int>("MarkId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MarkId"), 1L, 1);
+
+                    b.Property<string>("Activity")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Mark")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("MarkId");
+
+                    b.ToTable("Marks");
+                });
+
             modelBuilder.Entity("VGC.Models.Project", b =>
                 {
                     b.Property<int>("ProjectId")
@@ -287,6 +336,10 @@ namespace VGC.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("TopicDescription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TopicInfo")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

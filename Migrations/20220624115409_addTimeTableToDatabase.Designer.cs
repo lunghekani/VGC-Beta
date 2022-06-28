@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VGC;
 
@@ -11,9 +12,10 @@ using VGC;
 namespace VGC.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220624115409_addTimeTableToDatabase")]
+    partial class addTimeTableToDatabase
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -259,56 +261,7 @@ namespace VGC.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Courses", (string)null);
-                });
-
-            modelBuilder.Entity("VGC.Models.CreateAssessment", b =>
-                {
-                    b.Property<string>("AssessmentName")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("AssessmentCode")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("AssessmentDesc")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("DueDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("StartDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("AssessmentName");
-
-                    b.ToTable("CreateAssessment", (string)null);
-                });
-
-            modelBuilder.Entity("VGC.Models.Marks", b =>
-                {
-                    b.Property<int>("MarkId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MarkId"), 1L, 1);
-
-                    b.Property<string>("Activity")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Mark")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("MarkId");
-
-                    b.ToTable("Marks", (string)null);
+                    b.ToTable("Courses");
                 });
 
             modelBuilder.Entity("VGC.Models.Project", b =>
@@ -325,7 +278,7 @@ namespace VGC.Migrations
 
                     b.HasKey("ProjectId");
 
-                    b.ToTable("Projects", (string)null);
+                    b.ToTable("Projects");
                 });
 
             modelBuilder.Entity("VGC.Models.Topics", b =>
@@ -347,7 +300,7 @@ namespace VGC.Migrations
 
                     b.HasKey("TopicId");
 
-                    b.ToTable("Topics", (string)null);
+                    b.ToTable("Topics");
                 });
 
             modelBuilder.Entity("VGC.Models.Users", b =>
@@ -387,7 +340,7 @@ namespace VGC.Migrations
 
                     b.HasKey("UserId");
 
-                    b.ToTable("User", (string)null);
+                    b.ToTable("User");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
