@@ -4,94 +4,298 @@
     ViewBag.Title = "User Registration";
 }
 
-<h1>User Registration</h1>
-<form method="post">
-    <div class="border p-3">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-        <div class="form-group row">
-            <h2 class="text-info p1-3">Add New User</h2>
-        </div>
-        <div class="row">
-            <div class="col-8">
-                <div class=" form-group row">
-                       <div class="col-4">
-                        <label asp-for="FirstName"></label>
+<body id="kt_body" class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable">
+    <!--begin::Main-->
+
+    <div class="d-flex flex-column flex-root">
+        <!--begin::Login-->
+        <div class="login login-5 d-flex flex-row-fluid login-signup-on" id="kt_login">
+            <div class="d-flex flex-center bgi-size-cover bgi-no-repeat flex-row-fluid" style="background-image: url('/media/bg/bg-2.jpg');">
+                <div class="login-form text-center text-white p-7 position-relative overflow-hidden ">
+                    <!--begin::Login Header-->
+                    <div class="d-flex flex-center mb-15">
+                        <a href="#">
+                            <img src="/Pages/assets/media/logos/logo-letter-13.png" class="max-h-75px" alt="">
+                        </a>
                     </div>
-                    <div class="col-8">
-                        <input asp-for="FirstName" class="form-control" />
-                        <span asp-validation-for="FirstName" class="text-danger"></span>
+            <div class="aspNetHidden">
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="D/ks25ib2zpOkIsbDxrtt+j5JgeOsWl5t6snVRDYLXTSy4yhmUy4ELd8GD0Kfnh1bqjMJMbK0LzkC0dz00DKttUqp39rwk7xLzHKp8y8TGuYGg92kKSe1F+qjQ4qGRGXrXcNwqHKy9rGzEvu35GwWZNv53j6kLn2ru7EOrN2cWg=">
+            </div>
+
+            <div class="aspNetHidden">
+
+	            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="ABB6B0C5">
+	            <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="8JRSTmgMqpCIp/2UIZ/kRZmwrdwb9rzdv9NjXK1fon/2LP2/gFqd3DaUKT/jKwcAPM8i7nMkI2A40wBA5nEtnfS9TKxux+C6ZJy2AoAbFJ5ophOypD39UzCnZFOY18nFNHGo1wsSEc+gbX/m5xLWKAM0iofeFO8vrW6c2333FrsuaHANYmysIuWq7bhw5mkXuCywRItPIkdgIiF83SXVwDOO1B25rxtLoN3jBMD9V+soIRmcFCBzYzrnbk+h7eu+aTNUS7vTVcL9ssWww2TVyEh7VHMQeYW2CpOAkAkU49U=">
+            </div>
+        <!--end::Login Header-->
+                   
+        <!--begin::Login Sign up form-->
+
+       <form method="post">
+        <div class="#">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group row">
+                <h2 class="text-info p1-3">Add New User</h2>
+            </div>
+            <div class="row">
+                <div class="col-8">
+                    <div class=" form-group row">
+                           <div class="col-4">
+                            <label asp-for="FirstName"></label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="FirstName" class="form-control" />
+                            <span asp-validation-for="FirstName" class="text-danger"></span>
+                        </div>
+
                     </div>
 
-                </div>
+                    <div class="form-group row">
+                        <div class="col-4">
+                            <label asp-for="Surname"></label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="Surname" class="form-control" />
+                            <span asp-validation-for="Surname" class="text-danger"></span>
+                        </div>
 
-                <div class="form-group row">
-                    <div class="col-4">
-                        <label asp-for="Surname"></label>
                     </div>
-                    <div class="col-8">
-                        <input asp-for="Surname" class="form-control" />
-                        <span asp-validation-for="Surname" class="text-danger"></span>
-                    </div>
-
-                </div>
 
   
-                <div class=" form-group row">
-                    <div class="col-4">
-                        <label asp-for="Email"></label>
-                    </div>
-                    <div class="col-8">
-                        <input asp-for="Email" class="form-control" />
-                        <span asp-validation-for="Email" class="text-danger"></span>
-                    </div>
-                </div>
-
-                <div class=" form-group row">
-                    <div class="col-4">
-                        <label asp-for="Address"></label>
-                    </div>
-                    <div class="col-8">
-                        <input asp-for="Address" class="form-control" />
-                        <span asp-validation-for="Address" class="text-danger"></span>
-                    </div>
-                </div>
-
-                 <div class=" form-group row">
-                    <div class="col-4">
-                        <label asp-for="Password"></label>
-                    </div>
-                    <div class="col-8">
-                        <input asp-for="Password" class="form-control" />
-                        <span asp-validation-for="Password" class="text-danger"></span>
-                    </div>
-                </div>
-
-                <div class=" form-group row">
-                    <div class="col-4">
-                        <label asp-for="ConfirmPassword"></label>
-                    </div>
-                    <div class="col-8">
-                        <input asp-for="ConfirmPassword" class="form-control" />
-                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <div class="col-8 offset-4 row">
-
-                        <div class="col">
-                            <input type="submit" class="btn btn-info w-100%" value="Create"/> 
+                    <div class=" form-group row">
+                        <div class="col-4">
+                            <label asp-for="Email"></label>
                         </div>
-                        <div class="col">
-                            <a asp-action="Index" class="btn btn-success w-100">Back </a>
+                        <div class="col-8">
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
                         </div>
                     </div>
+
+                    <div class=" form-group row">
+                        <div class="col-4">
+                            <label asp-for="Address"></label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="Address" class="form-control" />
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                     <div class=" form-group row">
+                        <div class="col-4">
+                            <label asp-for="Password"></label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="Password" class="form-control" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class=" form-group row">
+                        <div class="col-4">
+                            <label asp-for="ConfirmPassword"></label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="ConfirmPassword" class="form-control" />
+                            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-12 offset-4 row">
+
+                            <div class="col">
+                                <input type="submit" class=" btn btn-pill btn-primary opacity-90 px-15 py-3 m-2" value="Create"/> 
+                            </div>
+                            <div class="col-6">
+                                <a asp-action="Index" class=" btn btn-pill btn-primary opacity-90 px-15 py-3 m-2">Back </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-4">
-                @*Keep this empty*@
+                <div class="col-4">
+                    @*Keep this empty*@
+                </div>
             </div>
         </div>
+    </form>
+                       
+                </div>
+            </div>
+        </div>
+        <!--end::Login-->
     </div>
-</form>
+
+    <!--end::Main-->
+    <script>var HOST_URL = "https://keenthemes.com/metronic/tools/preview";</script>
+    <!--begin::Global Config(global config for global JS scripts)-->
+
+    <!--end::Global Config-->
+    <!--begin::Global Theme Bundle(used by all pages)-->
+    <script src="/Pages/assets/plugins/global/plugins.bundle.js?v=7.0.5"></script>
+    <script src="/Pages/assets/plugins/custom/prismjs/prismjs.bundle.js?v=7.0.5"></script>
+    <script src="/Pages/assets/js/scripts.bundle.js?v=7.0.5"></script>
+    <!--end::Global Theme Bundle-->
+    <!--begin::Page Scripts(used by this page)-->
+    <script src="/Pages/assets/js/pages/custom/login/login-general.js?v=7.0.5"></script>
+    <!--end::Page Scripts-->
+
+    
+    
+<link rel="stylesheet" href="/Pages/assets/chat/src/flowchat.css">
+
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+  }
+
+  .fullf {
+    /* position: absolute; */
+    background-color: rgb(255, 255, 255);
+    left: 0;
+    right: 0;
+    width: 100% !important;
+    display: none;
+    position: fixed;
+    z-index: 10;
+    overflow:auto;
+    
+  }
+
+  .close {
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    position: absolute;
+    right: 0;
+    font-size: 15px;
+
+    transform: translate(50%);
+    right: 50%;
+    z-index: 2;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 141, 235);
+    border-radius: 10px;
+    margin: 10px;
+    border-radius: 50%;
+    font-weight: bold;
+
+  }
+
+ /* .chat-icon {
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    position: fixed;
+
+    font-size: 20px;
+    z-index: 2;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 141, 235);
+    border-radius: 10px;
+    margin: 10px;
+    border-radius: 50%;
+    font-weight: bold;
+    z-index: 0;
+    bottom: 50px;
+    left:50%;
+    /*box-shadow: 0 0 19px 2px rgba(132, 219, 241, 0.178);*/
+
+  }*/
+
+  .containerf {
+    font-family: 'Open Sans', sans-serif;
+
+    height: 100vh;
+    overflow: auto !important;
+    margin: auto;
+    background-color: #fff;
+    box-sizing: border-box;
+    position: relative;
+    width: 100% !important;
+
+  }
+
+  media (min-width: 600px) {
+    body {
+      background: #f2f2f2;
+    }
+
+    .containerf {
+      background-color: #fff;
+      border-radius: 10px;
+      max-width: 400px;
+      height: 100vh;
+      width: 100px;
+
+    }
+  }
+</style>
+
+
+<!-- Add your site or application content here -->
+@*<div class="fullf">
+  <div class="close">x</div>
+  <div class="containerf" id="flowchat">
+  </div>
+</div>
+<div class="chat-icon">
+    
+        <i class="fa fa-comment-alt"></i>
+
+    
+</div>*@
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="/Pages/assets/chat/src/flowchat.js"></script>
+<script>
+    $(function () {
+
+        // Also try "demo-data/simple-data.json"
+
+
+        var isLoaded = false;
+        $(".close").click(() => {
+            setTimeout(() => {
+                $(".fullf").toggle()
+            }, 1000);
+        });
+        $(".chat-icon").click(() => {
+            $(".fullf").toggle()
+
+            if (isLoaded == false) {
+                // load the chat
+                $.getJSON("/Pages/assets/chat/bot-data/script.json", function (dataJSON) {
+                    $('#flowchat').flowchat({
+                        dataJSON: dataJSON,
+                        autoStart: true
+                    });
+                });
+                isLoaded = true;
+            }
+
+        })
+    });
+
+</script>
+
+
+
+<!--end::Body-->
+
+<svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path id="SvgjsPath1004" d="M0 0 "></path></svg></body>
+
+
+
+

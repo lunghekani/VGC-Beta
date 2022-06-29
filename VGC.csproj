@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\media\bg-2.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.6" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.6" />
@@ -33,5 +37,8 @@
     <Folder Include="Views\ViewProjects\" />
     <Folder Include="Views\ViewStudents\" />
     <Folder Include="Views\ViewAssessment\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\media\bg\bg-2.jpg" />
   </ItemGroup>
 </Project>
