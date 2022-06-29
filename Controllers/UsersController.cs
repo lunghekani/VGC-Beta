@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using VGC;
 using VGC.Models;
@@ -11,10 +12,12 @@ namespace VGC.Controllers
     public class UsersController : Controller
     {
         private readonly ApplicationDbContext _db;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
-        public UsersController(ApplicationDbContext db)
+        public UsersController(ApplicationDbContext db, RoleManager<IdentityRole> roleManager)
         {
             _db = db;
+            _roleManager = roleManager;
         }
 
         public IActionResult Index()

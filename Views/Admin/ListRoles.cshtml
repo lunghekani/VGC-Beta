@@ -1,0 +1,14 @@
+﻿@model IEnumerable<IdentityRole>
+
+<h1>All Roles</h1>
+
+@if(Model.Any()){
+foreach (var role in Model)
+    {
+        <p> @role.Name </p>
+        <a asp-controller="admin" asp-action="EditRole" asp-route-id="@role.Id">Edit</a>
+    }
+}else{
+    <p> No Roles created yet</p>
+    <a asp-controller="admin" asp-action="CreateRole">Create Role</a>
+}

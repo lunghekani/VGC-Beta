@@ -1,0 +1,63 @@
+﻿@using VGC.ViewModels
+@model EditRoleViewModel
+
+@{
+    ViewBag.Title = "Edit Role";
+}
+
+<h1>Edit Role</h1>
+
+      <form method="post">
+        <div class="#">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group row">
+                <h2 class="text-info p1-3">Add New Role</h2>
+            </div>
+            <div class="row">
+                <div class="col-8">
+                    <div class=" form-group row">
+                           <div class="col-4">
+                            <label asp-for="Id"></label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="Id" disabled class="form-control" />
+                            <span asp-validation-for="Id" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class=" form-group row">
+                           <div class="col-4">
+                            <label asp-for="Name"></label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-12 offset-4 row">
+                            <div class="col">
+                                <input type="submit" class=" btn btn-pill btn-primary opacity-90 px-15 py-3 m-2" value="Update"/> 
+                            </div>
+                            <div class="col-6">
+                                <a asp-action="ListRoles" asp-controller="Admin" class=" btn btn-pill btn-primary opacity-90 px-15 py-3 m-2">Cancel </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    @*Keep this empty*@
+                </div>
+            </div>
+        </div>
+    </form>
+
+<h1> Users in this role</h1>
+@if(Model.Users.Any())
+{
+    foreach (var user in Model.Users)
+    {
+        <p> @user</p>
+    }
+}else{
+    <p> there are no users in this role</p>
+}
