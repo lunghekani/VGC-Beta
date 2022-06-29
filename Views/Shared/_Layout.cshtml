@@ -52,23 +52,25 @@
                         <a class="nav-link text-dark" asp-area="" asp-controller="ViewAssessment" asp-action="ViewAssessment">View Assessment</a>
                     </div>
                   </div> 
-
-                  <div class="new_dropdown">
-                    <button class="new_dropbtn text-dark">Admin 
-                      <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div class="new_dropdown-content">
-                      <a class="nav-link text-dark" asp-area="" asp-controller="admin" asp-action="Index">Dashboard</a>
-                      <a class="nav-link text-dark" asp-area="" asp-controller="admin" asp-action="CoursesAvailable">Courses Available</a>
-                      <a class="nav-link text-dark" asp-area="" asp-controller="admin" asp-action="AddCourse">Add Course</a>
-                      <a class="nav-link text-dark" asp-area="" asp-controller="admin" asp-action="ViewUser">View Students</a>
-                      <a class="nav-link text-dark" asp-area="" asp-controller="admin" asp-action="ViewLecturers">View Lecturers</a>
-                      <a class="nav-link text-dark" asp-area="" asp-controller="admin" asp-action="AddUser">Add User</a>
-                      <a class="nav-link text-dark" asp-area="" asp-controller="ViewProjects" asp-action="ViewProjects">View Projects</a>
-                      <a class="nav-link text-dark" asp-area="" asp-controller="admin" asp-action="adminCalender">Calender</a>
+               @*    @if (_signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                {*@
+                    <div class="new_dropdown">
+                        <button class="new_dropbtn text-dark">Admin 
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="new_dropdown-content">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="admin" asp-action="Index">Dashboard</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="admin" asp-action="CoursesAvailable">Courses Available</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="admin" asp-action="AddCourse">Add Course</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="admin" asp-action="ViewUser">View Students</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="admin" asp-action="ViewLecturers">View Lecturers</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="admin" asp-action="AddUser">Add User</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="ViewProjects" asp-action="ViewProjects">View Projects</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="admin" asp-action="adminCalender">Calender</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="admin" asp-action="CreateRole">Create Roles</a>
+                        </div>
                     </div>
-                  </div>
-
+                @*}*@
 
                   <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                   <div class="new_dropdown" style="position: relative; left: 5px">

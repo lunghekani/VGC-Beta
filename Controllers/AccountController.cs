@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using VGC.Models;
+using VGC.ViewModels;
 
 namespace VGC.Controllers
 {
@@ -83,40 +84,72 @@ namespace VGC.Controllers
         }
         //GET - EDIT
         // todo: check the resource for the password hash
-        public IActionResult Edit(string UserId)
+        [HttpGet]
+        public async Task<IActionResult> Edit(string UserId)
         {
-            if (string.IsNullOrEmpty(UserId))
+            var user = await _userManager.FindByIdAsync(UserId);
+
+            if (user == null)
             {
-                return NotFound();
-            }
-            var obj = _db.Users.FirstOrDefault(x=> x.Id == UserId);
-            if (obj == null)
-            {
-                return NotFound();
+                ViewBag.ErrorMessage = $"User with Id = {UserId} cannot be found";
+                return View("NotFound");
             }
 
-            return View(obj);
+            // GetClaimsAsync retunrs the list of user Claims
+            var userClaims = await _userManager.GetClaimsAsync(user);
+            // GetRolesAsync returns the list of user Roles
+            var userRoles = await _userManager.GetRolesAsync(user);
+
+            var model = new EditUserViewModel
+            {
+                Id = user.Id,
+                Email = user.Email,
+                UserName = user.UserName,
+                FirstName = user.FirstName,
+                Surname = user.Surname,
+                Address = user.Address,
+                PhoneNumber = user.PhoneNumber,
+                Claims = userClaims.Select(c => c.Value).ToList(),
+                Roles = userRoles
+            };
+
+            return View(model);
         }
 
         //POST - EDIT
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(ApplicationUser user)
+        public async Task<IActionResult> EditUser(EditUserViewModel model)
         {
-            if (ModelState.IsValid)
+            var user = await _userManager.FindByIdAsync(model.Id);
+
+            if (user == null)
             {
+                ViewBag.ErrorMessage = $"User with Id = {model.Id} cannot be found";
+                return View("NotFound");
+            }
+            else
+            {
+                user.Email = model.Email;
+                user.UserName = model.UserName;
+                user.PhoneNumber = model.PhoneNumber;
+                user.Surname = model.Surname;
+                user.FirstName = model.FirstName;
+                user.Address = model.Address;
+                
                 var result = await _userManager.UpdateAsync(user);
 
                 if (result.Succeeded)
-                { 
-                return RedirectToAction("Index");
+                {
+                    return RedirectToAction("ListUsers");
                 }
+
                 foreach (var error in result.Errors)
                 {
-                    ModelState.AddModelError(string.Empty, error.Description);
+                    ModelState.AddModelError("", error.Description);
                 }
+
+                return View(model);
             }
-            return View(user);
         }
     }
 }
