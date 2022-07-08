@@ -9,6 +9,7 @@ using VGC.Models;
 
 namespace VGC.Controllers
 {
+    [Authorize]
     public class TopicsController : Controller
     {
         private readonly ApplicationDbContext db;
@@ -28,14 +29,7 @@ namespace VGC.Controllers
             return View(topics);
         }
 
-        public IActionResult TopicContent(int? TopicId)
-        {
-            var topic = db.Topics.Find(TopicId);
-            
-            return View(topic.TopicInfo);
-        }
-
-
+       
         //GET - CREATE
         public IActionResult Create()
         {
@@ -110,5 +104,31 @@ namespace VGC.Controllers
             }
             return View(obj);
         }
+
+        //TopicContent
+        
+        public IActionResult TopicContent(int? TopicId)
+        {
+            var topic = db.Topics.Find(TopicId);
+
+            return View(topic.TopicInfo);
+        }
+        public IActionResult CreateContent()
+        {
+            return View();
+        }
+        public IActionResult EditContent()
+        {
+            return View();
+        }
+        public IActionResult DeleteContent()
+        {
+            return View();
+        }
+        public IActionResult ListContent()
+        {
+            return View();
+        }
+       
     }
 }

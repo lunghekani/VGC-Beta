@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using VGC;
@@ -9,8 +10,10 @@ using VGC.Models;
 
 namespace VGC.Controllers
 {
+    [Authorize]
     public class UsersController : Controller
     {
+       
         private readonly ApplicationDbContext _db;
         private readonly RoleManager<IdentityRole> _roleManager;
 

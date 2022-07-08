@@ -15,7 +15,7 @@ namespace VGC
         public DbSet<Topics> Topics { get; set; }
         public DbSet<Courses> Courses { get; set; }
         public DbSet<Marks> Marks { get; set; }
-        public DbSet<CreateAssessment> CreateAssessment { get; set; }
+        public DbSet<Assessment> CreateAssessment { get; set; }
         
 
 
