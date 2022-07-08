@@ -7,6 +7,7 @@ using VGC.ViewModels;
 namespace VGC.Controllers
 {
     //[Authorize(Roles = "Admin")]
+    [Authorize]
     public class AdminController : Controller
     {
         private readonly RoleManager<IdentityRole> _roleManager;

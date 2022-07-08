@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace VGC.Views.AddCourseContent
+namespace VGC.Views.Assessment
 {
-    public class AddCourseContentModel : PageModel
+    public class ViewAssessmentModel : PageModel
     {
         public void OnGet()
         {

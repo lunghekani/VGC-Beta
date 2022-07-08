@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="~/css/headerstyle.css" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
@@ -33,33 +34,44 @@
                           <div class="new_topnav" id="myTopnav">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="ListUsers">Users</a>
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Projects" asp-action="Index">Projects</a>
-                          <div class="new_dropdown">
 
-                            <button class="new_dropbtn text-dark">Students
-                              <i class="fa fa-caret-down"></i>
-                            </button>
-                            <div class="new_dropdown-content">
-                                  <a class="nav-link text-dark" asp-area="" asp-controller="lectHomePage" asp-action="StudentDash">Dashboard</a>
-                                  <a class="nav-link text-dark" asp-area="" asp-controller="StudentCourses" asp-action="StudentCourses">Student Courses</a>
-                                  <a class="nav-link text-dark" asp-area="" asp-controller="Timetable" asp-action="Timetable">Timetable</a>
-                                  <a class="nav-link text-dark" asp-area="" asp-controller="Marks" asp-action="Marks">Marks</a>
-                                  <a class="nav-link text-dark" asp-area="" asp-controller="CreateAssessment" asp-action="StudentAssessment">Student Assess</a>
-                                  <a href="#">Link 3</a>
-                             </div>
-                          </div> 
-                          <div class="new_dropdown">
-                                <button class="new_dropbtn text-dark">Lecturer 
-                                  <i class="fa fa-caret-down"></i>
-                                </button>
-                                <div class="new_dropdown-content">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="lectHomePage" asp-action="Index">Dashboard</a>
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="AddCourseContent" asp-action="AddCourseContent">Add Course Content</a>
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="ViewProjects" asp-action="ViewProjects">View Projects</a>
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="ViewStudents" asp-action="ViewStudents">View Students</a>
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="CreateAssessment" asp-action="CreateAssessment">Create Assessment</a>
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="ViewAssessment" asp-action="ViewAssessment">View Assessment</a>
-                                </div>
-                            </div> 
+                              <div class="new_dropdown">
+                                @* @if (_signInManager.IsSignedIn(User) && User.IsInRole("Student"))
+                                    {*@
+
+                                    <button class="new_dropbtn text-dark">Students
+                                      <i class="fa fa-caret-down"></i>
+                                    </button>
+                                    <div class="new_dropdown-content">
+                                          <a class="nav-link text-dark" asp-area="" asp-controller="lectHomePage" asp-action="StudentDash">Dashboard</a>
+                                          <a class="nav-link text-dark" asp-area="" asp-controller="Course" asp-action="StudentCourses">Student Courses</a>
+                                          <a class="nav-link text-dark" asp-area="" asp-controller="Timetable" asp-action="Timetable">Timetable</a>
+                                          <a class="nav-link text-dark" asp-area="" asp-controller="Marks" asp-action="Marks">Marks</a>
+                                          <a class="nav-link text-dark" asp-area="" asp-controller="Assessment" asp-action="StudentAssessment">Student Assess</a>
+                                          <a href="#">Link 3</a>
+                                    </div> 
+                                @* }*@
+                              </div> 
+
+                           @* @if (_signInManager.IsSignedIn(User) && User.IsInRole("Student"))
+                                 {*@     
+                                  <div class="new_dropdown">
+                                        <button class="new_dropbtn text-dark">Lecturer 
+                                          <i class="fa fa-caret-down"></i>
+                                        </button>
+                                        <div class="new_dropdown-content">
+                                            <a class="nav-link text-dark" asp-area="" asp-controller="lectHomePage" asp-action="Index">Dashboard</a>
+                                            <a class="nav-link text-dark" asp-area="" asp-controller="Course" asp-action="AddCourseContent">Add Course Content</a>
+                                            <a class="nav-link text-dark" asp-area="" asp-controller="ViewProjects" asp-action="ViewProjects">View Projects</a>
+                                            <a class="nav-link text-dark" asp-area="" asp-controller="ViewStudents" asp-action="ViewStudents">View Students</a>
+                                            <a class="nav-link text-dark" asp-area="" asp-controller="Assessment" asp-action="CreateAssessment">Create Assessment</a>
+                                            <a class="nav-link text-dark" asp-area="" asp-controller="Assessment" asp-action="ViewAssessment">View Assessment</a>
+                                        </div>
+                                    </div> 
+
+                                   @* }*@
+
+
                                @*    @if (_signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
                                 {*@
                                     <div class="new_dropdown">
@@ -81,37 +93,16 @@
                                 @*}*@
 
                             </div>
-                      }     <partial name="_LoginPartial"/>
 
-
-                        @*var user = _userManager.FindByEmailAsync(User.Identity.Name);
-                        string firstName = user.Result.FirstName;
+                      }    
+                       <partial name="_LoginPartial"/>
                         
-                      <form asp-area="" asp-controller="Account" asp-action="logout" method="post" id="logoutForm" class="navbar-right text-dark">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li>
-                                <a class="nav-link text-dark"  asp-area="" asp-controller="Manage" asp-action="Index" title="Manage">Hello @firstName </a>
-                            </li>
-                            <li>
-                                <button type="submit" class="new_dropbtn text-dark">Log off</button>
-                            </li>
-                        </ul>
-                      </form>*@
-
                        
-                       @*else{
-                          <a class="nav-link text-dark" asp-controller="account" asp-action="register">Register</a>
-                          <a class="nav-link text-dark"  asp-controller="account" asp-action="login">Login</a>
-                          <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-                          }                          
-                          </div>*@
-
-                       
-
-          @* </div>*@
-           @*If user is signed out display Logout link*@
+                       @*If user is signed out display Logout link*@
         </nav>
     </header>
+
+
 
     <div class="container">
         <main role="main" class="pb-3">

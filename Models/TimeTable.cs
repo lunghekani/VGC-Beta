@@ -9,6 +9,7 @@ namespace VGC.Models
         public int TimeTableId { get; set; }
         public string CourseName  { get; set; }
         public string LecturerName { get; set; }
-        public double Classtime { get; set; }
+        public DateTime Start { get; set; }
+        public DateTime End { get; set; }
     }
 }

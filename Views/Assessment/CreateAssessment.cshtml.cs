@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace VGC.Controllers
+namespace VGC.Views.Assessment
 {
-    public class AddCourseContentController : Controller
+    public class CreateAssessmentModel : PageModel
     {
-        public IActionResult AddCourseContent()
+        public void OnGet()
         {
-            return View();
+
         }
     }
 }

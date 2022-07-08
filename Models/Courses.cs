@@ -16,15 +16,14 @@ namespace VGC.Models
         [Required]
         public string CourseDescription { get; set; }
         [Required]
-
         public string CourseCode { get; set; }
         [Required]
-        public string  LecturerName { get; set; }
+        public string LecturerName { get; set; }
         [Required]
         public string LecturerEmail { get; set; }
-
+        [Required]
         public DateTime? StartDate { get; set; }
-
+        [Required]
         public DateTime? EndDate { get; set; }
     }
 }

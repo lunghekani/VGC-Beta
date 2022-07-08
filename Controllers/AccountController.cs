@@ -151,6 +151,12 @@ namespace VGC.Controllers
                 return View(model);
             }
         }
+
+
+        public ActionResult SideMenu()
+        {
+            return PartialView("_SideMenu");
+        }
     }
 }
 
