@@ -22,9 +22,27 @@ namespace VGC.Controllers
         {
             return View();
         }
-        public IActionResult listProject()
+        public IActionResult allProjects()
         {
             return View();
         }
+        public IActionResult personalProjects()
+        {
+            return View();
+        }
+        public IActionResult featuredlProjects()
+        {
+            return View();
+        }
+         public IActionResult Intonga()
+        {
+            return View();
+        }
+        public IActionResult Morabaraba()
+        {
+            return View();
+        }
+
+
     }
 }
